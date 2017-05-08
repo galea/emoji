@@ -9,36 +9,25 @@
 import UIKit
 
 class EmojiViewController: UIViewController {
+   
+    @IBOutlet weak var categoryLabel: UILabel!
     
+    @IBOutlet weak var birthyearLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
     
     @IBOutlet weak var emojiDescription: UILabel!
     
-    var emoji = "No emoji"
-
+    var emoji = Emoji()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        emojiLabel.text = emoji
-        
-        if emoji == "🐼" {
-            emojiDescription.text = "Kung Fu Panda"
-        }
-        if emoji == "🦁" {
-            emojiDescription.text = "Lion Rawr Rawr"
-        }
-        if emoji == "🐵" {
-            emojiDescription.text = "Spanky Monkey"
-        }
-        if emoji == "🐝" {
-            emojiDescription.text = "Bee Bzzzzz"
-        }
-        if emoji == "🦄" {
-            emojiDescription.text = "Unicorn of Love"
-        }
-
+        emojiLabel.text = emoji.stringEmoji
+        birthyearLabel.text = "Origination Date: \(emoji.birthYear)"
+        categoryLabel.text = "Category: \(emoji.category)"
+       emojiDescription.text = "Defintion: \(emoji.defintion)"
 
 
         
